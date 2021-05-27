@@ -1,0 +1,22 @@
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 50%;
+  background-color: #373736;
+}
+
+.chat-header__title {
+  color: #e2e7e7;
+}
+
+.chat-header__online-icon {
+  width: 25px;
+
+  padding-left: 20px;
+}
+
+.chat-header__close-icon {
+  width: 25px;
+  padding-right: 20px;
+}

@@ -1,0 +1,40 @@
+.join-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #373736;
+}
+
+.join-form__title {
+  margin: 0;
+  padding: 0;
+  color: #e2e7e7;
+}
+
+.join-form__input {
+  background-color: #373736;
+  color: #e2e7e7;
+}
+.join-form__input:focus {
+  outline: none;
+}
+
+.join-form__button {
+  background-color: #4f8177;
+  border: none;
+  border-radius: 5px;
+  color: #e2e7e7;
+  text-transform: uppercase;
+  padding: 5px 25px;
+  cursor: pointer;
+}
+
+.join-form__button_type_disabled {
+  opacity: 20%;
+  cursor: default;
+}

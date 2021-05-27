@@ -1,0 +1,9 @@
+.message-form {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.msg__send-btn {
+  padding: 0;
+}
