@@ -44,8 +44,6 @@ const Chat = ({ location }) => {
       socket.emit("sendMessage", message, () => setMessage(""));
     }
   };
-
-  console.log(message, messages);
   return (
     <section className="chat">
       <ChatHeader room={room} />

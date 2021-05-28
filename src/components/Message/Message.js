@@ -3,15 +3,17 @@ import React from "react";
 import "./Message.css";
 
 function Message({ message, name }) {
-  const [currentUserMessage, setCurrentUserMessage] = React.useState(false);
+  let isCurrentUser = false;
+  const trimmedName = name.trim().toLowerCase();
 
-  if (message.user === name.trim().toLowerCase()) {
-    // setCurrentUserMessage(true);
-    console.log(message.user, name.trim().toLowerCase());
+  if (message.user === trimmedName) {
+    isCurrentUser = true;
   }
 
   return (
-    <div className="message">
+    <div
+      className={`message ${isCurrentUser ? "message_type_current-user" : ""}`}
+    >
       <b className="message__author">{message.user}</b>
       <p className="message__date">{message.date}</p>
       <p className="message__text">{message.text}</p>
