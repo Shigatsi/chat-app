@@ -1,5 +1,7 @@
 .messages {
   width: 50%;
+  height: 400px;
+  overflow-y: auto;
 }
 
 .message_type_current {

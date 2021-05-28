@@ -12,7 +12,7 @@ function ChatHeader({ room }) {
         src={onlineIcon}
         alt="online icon green color"
       ></img>
-      <h3 className=" chat-header__title">{room}</h3>
+      <h3 className=" chat-header__title">room: {room}</h3>
       <a href="/" className="chat-header__close">
         <img
           className="chat-header__close-icon"

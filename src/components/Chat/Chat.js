@@ -6,6 +6,7 @@ import "./Chat.css";
 import Messages from "../Messages/Messages";
 import ChatHeader from "../ChatHeader/ChatHeader";
 import AddMessageForm from "../AddMessageForm/AddMessageForm";
+import SideBar from "../SideBar/SideBar";
 
 let socket;
 
@@ -14,6 +15,7 @@ const Chat = ({ location }) => {
   const [room, setRoom] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [messages, setMessages] = React.useState([]);
+  const [users, setUsers] = React.useState([]);
   const ENDPOINT = "localhost:5000";
 
   React.useEffect(() => {
@@ -38,6 +40,13 @@ const Chat = ({ location }) => {
     });
   }, [messages]);
 
+  React.useEffect(() => {
+    socket.on("roomData", (data) => {
+      setUsers(data.users);
+    });
+  }, [users]);
+
+  console.log(users);
   const sendMessage = (event) => {
     event.preventDefault();
     if (message) {
@@ -47,6 +56,7 @@ const Chat = ({ location }) => {
   return (
     <section className="chat">
       <ChatHeader room={room} />
+      <SideBar users={users} />
       <Messages messages={messages} name={name} date={messages.date} />
       <AddMessageForm
         message={message}

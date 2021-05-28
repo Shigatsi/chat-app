@@ -1,4 +1,5 @@
 import React from "react";
+import ReactEmoji from "react-emoji";
 
 import "./Message.css";
 
@@ -16,7 +17,7 @@ function Message({ message, name }) {
     >
       <b className="message__author">{message.user}</b>
       <p className="message__date">{message.date}</p>
-      <p className="message__text">{message.text}</p>
+      <p className="message__text">{ReactEmoji.emojify(message.text)}</p>
       <hr />
     </div>
   );
